@@ -1,0 +1,150 @@
+/* =====================================================
+   CONTACT: reserve-your-date band, contact cards, and the enquiry form
+   ===================================================== */
+
+/* Dark band at the top of the contact area */
+.cta-band {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding: 72px 24px;
+  background: var(--ink);
+  color: var(--ivory);
+  text-align: center;
+}
+
+.cta-band h2 {
+  max-width: 560px;
+  color: var(--ivory);
+  font-size: 30px;
+  line-height: 38px;
+}
+
+.cta-text {
+  max-width: 380px;
+  color: rgba(253, 251, 247, 0.85);
+}
+
+.contact-links {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.contact-card {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+  padding: 14px;
+  background: var(--light-section);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.contact-label {
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted-text);
+}
+
+.contact-value {
+  font-size: 13px;
+  font-weight: 600;
+  overflow-wrap: anywhere;      /* long emails wrap instead of pushing the page sideways */
+}
+
+/* The enquiry form */
+.enquiry-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 24px;
+  background: var(--light-section);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-field label {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted-text);
+}
+
+.form-field input,
+.form-field select,
+.form-field textarea {
+  width: 100%;
+  padding: 12px;
+  background: var(--white);
+  border: 1px solid #d8d0c5;
+  border-radius: 0;
+  font-size: 16px;              /* 16px stops iPhones zooming in when typing */
+  color: var(--ink);
+}
+
+.form-field input:focus,
+.form-field select:focus,
+.form-field textarea:focus {
+  outline: none;
+  border-color: var(--ink);
+}
+
+.form-field textarea {
+  resize: vertical;
+}
+
+.submit-button {
+  height: 48px;
+  margin-top: 8px;
+  background: var(--ink);
+  border: none;
+  color: var(--ivory);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.submit-button:hover {
+  background: #262626;
+}
+
+.form-note {
+  text-align: center;
+}
+
+/* Tablet and desktop */
+@media (min-width: 768px) {
+  .contact-links {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .enquiry-form {
+    padding: 40px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .enquiry-form {
+    max-width: 720px;
+    width: 100%;
+    margin: 0 auto;
+  }
+}
+
+/* Shown under the form when sending fails */
+.form-message-error {
+  color: #8a2c2c;
+}

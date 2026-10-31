@@ -1,0 +1,89 @@
+/* =====================================================
+   FOOTER
+   ===================================================== */
+
+.site-footer {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  padding: 64px 24px 32px;
+  background: var(--ink);
+  color: var(--ivory);
+}
+
+.footer-logo {
+  width: 140px;
+  height: auto;
+  filter: invert(1);            /* the logo is black, so flip it to white on the dark footer */
+}
+
+.footer-tagline {
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #e0c298;
+}
+
+.footer-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.footer-column {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.footer-column p,
+.footer-column a {
+  font-size: 13px;
+  color: rgba(253, 251, 247, 0.85);
+  text-decoration: none;
+  overflow-wrap: anywhere;
+}
+
+.footer-column a:hover {
+  color: var(--gold-light);
+}
+
+.footer-title {
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(253, 251, 247, 0.6);
+}
+
+.footer-bottom {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding-top: 24px;
+  border-top: 1px solid #2a2825;
+  font-size: 11px;
+  color: rgba(253, 251, 247, 0.6);
+}
+
+.footer-bottom a {
+  color: var(--gold-light);
+  text-decoration: none;
+}
+
+/* Tablet and desktop */
+@media (min-width: 768px) {
+  .site-footer {
+    padding: 80px 40px 40px;
+  }
+
+  .footer-columns {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 640px;
+  }
+
+  .footer-bottom {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}

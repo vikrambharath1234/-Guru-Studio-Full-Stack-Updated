@@ -1,0 +1,247 @@
+/* =====================================================
+   GLOBAL STYLES
+   Colours, fonts, and rules shared by every section.
+   Phone styles come first; wider screens are added at the
+   bottom of each section's own CSS file with @media rules.
+   ===================================================== */
+
+/* 1. Colours and fonts. Change them here and the whole site updates. */
+:root {
+  --ink: #121212;            /* main dark colour */
+  --ivory: #fdfbf7;          /* main page background */
+  --white: #ffffff;
+  --gold: #c5a880;
+  --gold-light: #fedeb2;     /* light gold for buttons on dark backgrounds */
+  --gold-dark: #725b38;      /* darker gold for small text on light backgrounds */
+  --champagne: #f4ece1;      /* soft highlight boxes */
+  --muted-text: #444748;     /* grey text for paragraphs */
+  --light-section: #f5f3ef;  /* background for alternate sections */
+  --border: #e8e2d8;
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body: 'Plus Jakarta Sans', Arial, sans-serif;
+}
+
+/* 2. Basic reset */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;      /* smooth scrolling when a link is clicked */
+  scroll-padding-top: 120px;     /* stops the sticky header covering section titles */
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;           /* no sideways scrolling on phones */
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--ink);
+  background: var(--ivory);
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: inherit;
+}
+
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+}
+
+/* Keyboard users see a clear outline when they tab to a link or button */
+:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
+}
+
+/* 3. Text styles */
+h1,
+h2,
+h3 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  color: var(--ink);
+  margin: 0;
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: 40px;
+  line-height: 48px;
+}
+
+h2 {
+  font-size: 32px;
+  line-height: 40px;
+}
+
+h3 {
+  font-size: 22px;
+  font-weight: 500;
+}
+
+p {
+  margin: 0;
+}
+
+em {
+  font-style: italic;
+}
+
+.eyebrow {
+  margin-bottom: 12px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+}
+
+.eyebrow-light {
+  color: #e0c298;
+}
+
+.body-text {
+  margin-top: 8px;
+  color: var(--muted-text);
+}
+
+.small-text {
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--muted-text);
+}
+
+/* 4. Shared layout pieces */
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  padding: 64px 24px;
+  background: var(--ivory);
+}
+
+.section-light {
+  background: var(--light-section);
+}
+
+.section-heading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  text-align: center;
+}
+
+.section-heading .body-text {
+  max-width: 340px;
+}
+
+/* 5. Buttons */
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 48px;
+  padding: 0 24px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: 1px solid transparent;
+  transition: background 0.2s, color 0.2s;
+}
+
+.button-gold {
+  background: var(--gold-light);
+  color: #281800;
+}
+
+.button-gold:hover {
+  background: var(--white);
+}
+
+.button-outline {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.4);
+  color: var(--white);
+}
+
+.button-outline:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.text-link {
+  display: inline-block;
+  margin-top: 12px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  text-decoration: none;
+}
+
+.text-link:hover {
+  color: var(--ink);
+}
+
+/* 6. Respect people who turn off animations in their system settings */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  * {
+    transition: none !important;
+  }
+}
+
+/* 7. Tablet and desktop: shared section spacing */
+@media (min-width: 768px) {
+  .section {
+    padding: 96px 40px;
+  }
+
+  h1 {
+    font-size: 56px;
+    line-height: 64px;
+  }
+
+  h2 {
+    font-size: 40px;
+    line-height: 48px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .section {
+    padding: 112px 64px;
+  }
+
+  h1 {
+    font-size: 72px;
+    line-height: 80px;
+  }
+
+  h2 {
+    font-size: 48px;
+    line-height: 56px;
+  }
+}

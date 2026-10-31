@@ -1,0 +1,56 @@
+/* =====================================================
+   REVIEWS: approved customer reviews and the review form
+   ===================================================== */
+
+/* This section is ivory, like the other plain sections */
+.section-review {
+  background: var(--ivory);
+}
+
+/* One column on phones, more columns on bigger screens */
+.review-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  max-width: 1040px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.review-card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 24px;
+  background: var(--light-section);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.review-stars {
+  color: var(--gold-dark);
+  letter-spacing: 2px;
+}
+
+.review-stars-empty {
+  color: var(--border);
+}
+
+.review-name {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+}
+
+.review-form {
+  max-width: 720px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .review-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

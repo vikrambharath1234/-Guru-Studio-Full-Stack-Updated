@@ -1,0 +1,67 @@
+/* =====================================================
+   ABOUT SECTION
+   ===================================================== */
+
+.about-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.about-text {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.about-text h2 {
+  font-size: 30px;
+  line-height: 38px;
+}
+
+.experience-card {
+  padding: 28px 24px;
+  background: var(--champagne);
+  text-align: center;
+}
+
+.experience-number {
+  font-family: var(--font-display);
+  font-size: 56px;
+  line-height: 1;
+  color: var(--ink);
+}
+
+.experience-label {
+  margin-top: 8px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted-text);
+}
+
+/* The photo keeps its own shape (no cropping) */
+.about-photo {
+  margin: 0;
+}
+
+.about-photo img {
+  width: 100%;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+/* Tablet and desktop: text and photo side by side */
+@media (min-width: 1024px) {
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 80px;
+  }
+
+  .about-text h2 {
+    font-size: 40px;
+    line-height: 48px;
+  }
+}
